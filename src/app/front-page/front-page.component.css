@@ -1,9 +1,11 @@
 form {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
-img {
-    width: 200px;
+.card {
+    width: 500px;
+    align-items: center;
 }
