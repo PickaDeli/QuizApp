@@ -13,8 +13,8 @@ export class ComputerSienceService {
   constructor(private http: HttpClient) { }
 
   // function that gets questions from the API and saves them to url-variable?
-  GetQuestionsByCategory(): Observable<any> {
-    // Name of the function, Observale = asyncronic <any> = type of data expected
+  getQuestionsByCategory(): Observable<any> {
+    // Name of the function, Observale = asyncronic <any[]> = type of data array expected
     // returns http get from api.Url
     return this.http.get<any>(this.apiUrl);
   }

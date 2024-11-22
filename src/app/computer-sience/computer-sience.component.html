@@ -1,1 +1,15 @@
-<p>computer-sience works!</p>
+<!-- To print the question -->
+<div *ngIf="currentQuestion">
+  <h2 [innerHTML]="currentQuestion.question"></h2>
+</div>
+<div class="block"></div>
+
+<!-- Choices -->
+
+<div class="grid-container">
+  <div *ngFor="let answer of getAllAnswers(); let i = index;" class="grid-item">
+    <button class="button" (click)="selectAnswer(answer)" [class.selected]="selectedAnswer === answer">
+      {{ answer }}
+    </button>
+  </div>
+</div>

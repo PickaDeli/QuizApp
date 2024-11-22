@@ -32,8 +32,8 @@
               }
             ],
             "styles": [
-              "https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css"
             ],
             "scripts": []
           },

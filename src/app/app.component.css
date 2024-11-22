@@ -3,3 +3,31 @@
   justify-content: center;
   padding-top: 150px;
 }
+
+/* CSS for answer-button starts here */
+
+.answer-button {
+  background-color: #9b4caf;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.answer-button:hover {
+  background-color: #45a049;
+}
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+/* CSS for answer-buttons ends here */
