@@ -17,5 +17,16 @@ export class ComputerSienceService {
     // Name of the function, Observale = asyncronic <any[]> = type of data array expected
     // returns http get from api.Url
     return this.http.get<any>(this.apiUrl);
+
+  }
+
+  private username: string | null = null;
+  // Asetetaan käyttäjänimi
+  setUsername(username: string): void {
+    this.username = username;
+  }
+  // Haetaan käyttäjänimi
+  getUsername(): string | null {
+    return this.username;
   }
 }
