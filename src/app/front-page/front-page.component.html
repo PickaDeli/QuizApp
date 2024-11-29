@@ -1,40 +1,41 @@
 <form #usernameForm="ngForm" (ngSubmit)="OnSubmit(usernameForm)">
-    <div class="column is-one-third">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="/assets/Images/unicorn-8563104_1280.png" alt="" />
-                </figure>
-            </div>
-        </div>
-
-
-        <div class="content">
-            <b>Welcome to QuizApp!</b>
-            <br> Test your knowledge in different subject areas and learn something new.
-            Start by creating a username for
-            yourself. Have fun!
-            <br />
-        </div>
-
-        <div class="field">
-
-            <div class="control">
-                <input class="input" id="username" type="text" placeholder="Who's playing?" name="username" ngModel
-                    required minlength="4" #username="ngModel" />
-            </div>
-            <p class="help is-danger" *ngIf="username?.errors?.['required'] && username?.touched">
-                Pleace enter yourself a username.
-            </p>
-            <p class="help is-danger" *ngIf="username?.errors?.['minlength'] && username?.touched">
-                Username must be at least 4 characters long.
-            </p>
-        </div>
-
-        <button class="button is-fullwidth, button is-danger" [disabled]="!usernameForm.valid" type="submit">Let's
-            play!</button>
-
+  <div class="column is-one-third">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="/assets/Images/unicorn-8563104_1280.png" alt="" />
+        </figure>
+      </div>
+      <div class="content">
+        <b>Welcome to QuizApp!</b>
+        <br> Test your knowledge in different subject areas and learn something new.
+        Start by creating a username for
+        yourself. Have fun!
+        <br />
+      </div>
     </div>
+
+
+
+
+    <div class="field">
+
+      <div class="control">
+        <input class="input" id="username" type="text" placeholder="Who's playing?" name="username" ngModel required
+          minlength="4" #username="ngModel" />
+      </div>
+      <p class="help is-danger" *ngIf="username?.errors?.['required'] && username?.touched">
+        Pleace enter yourself a username.
+      </p>
+      <p class="help is-danger" *ngIf="username?.errors?.['minlength'] && username?.touched">
+        Username must be at least 4 characters long.
+      </p>
+    </div>
+
+    <button class="button is-fullwidth, button is-danger" [disabled]="!usernameForm.valid" type="submit">Let's
+      play!</button>
+
+  </div>
 
 
 </form>
