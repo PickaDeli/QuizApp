@@ -9,7 +9,7 @@
 <div class="grid-container">
   <div *ngFor="let answer of getAllAnswers(); let i = index;" class="grid-item">
     <button class="button" (click)="selectAnswer(answer)" [class.selected]="selectedAnswer === answer">
-      {{ answer }}
+      <span [innerHTML]="answer"></span>
     </button>
   </div>
 </div>
