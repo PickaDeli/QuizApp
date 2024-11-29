@@ -1,4 +1,4 @@
-<form>
+<form #usernameForm="ngForm" (ngSubmit)="OnSubmit(usernameForm)">
     <div class="column is-one-third">
         <div class="card">
             <div class="card-image">
@@ -31,7 +31,9 @@
             </p>
         </div>
 
-        <button class="button is-fullwidth, button is-danger">Let's play!</button>
+        <button class="button is-fullwidth, button is-danger" [disabled]="!usernameForm.valid" type="submit">Let's
+            play!</button>
+
     </div>
 
 

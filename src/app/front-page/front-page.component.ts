@@ -11,11 +11,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './front-page.component.css'
 })
 export class FrontPageComponent {
+  ComputerSienceService: any;
 
-  OnSubmit() {
-
+  OnSubmit(form: any): void {
+    const username = form.value.username;
+    if (username) {
+      this.ComputerSienceService.setUsername(username);  // Tallenna käyttäjänimi ComputerSienceServiceen
+      //this.router.navigate(['/topics']);  // Siirry aiheen valintanäkymään
+    }
   }
 }
-
 
 

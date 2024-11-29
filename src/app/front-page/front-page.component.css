@@ -8,4 +8,6 @@ form {
 .card {
     width: 500px;
     align-items: center;
+    background-color: black !important;
+
 }
