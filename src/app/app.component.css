@@ -18,17 +18,14 @@
   margin: 5px;
 }
 
-.answer-button:hover {
-  background-color: #45a049;
-}
-
-.correct {
+.button.correct {
   background-color: green;
 }
 
-.incorrect {
+.button.incorrect {
   background-color: red;
 }
+
 
 /* CSS for answer-buttons ends here */
 

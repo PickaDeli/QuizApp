@@ -1,14 +1,18 @@
 <!-- To print the question -->
-<div *ngIf="currentQuestion">
-  <h2 [innerHTML]="currentQuestion.question"></h2>
+<div *ngIf="questionService.currentQuestion">
+  <h2 [innerHTML]="questionService.currentQuestion.question"></h2>
 </div>
 <div class="block"></div>
 
 <!-- Choices -->
 
 <div class="grid-container">
-  <div *ngFor="let answer of getAllAnswers(); let i = index;" class="grid-item">
-    <button class="button" (click)="selectAnswer(answer)" [class.selected]="selectedAnswer === answer">
+  <div *ngFor="let answer of questionService.getAllAnswers(); let i = index;" class="grid-item">
+    <button class="button" (click)="selectAnswer(answer)" [class.selected]="questionService.selectedAnswer === answer"
+      [ngClass]="{
+        'correct': questionService.isAnswerCorrect && questionService.selectedAnswer === answer,
+        'incorrect': !questionService.isAnswerCorrect && questionService.selectedAnswer === answer
+      }">
       <span [innerHTML]="answer"></span>
     </button>
   </div>
