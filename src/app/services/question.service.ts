@@ -12,6 +12,7 @@ export class QuestionService {
   currentQuestion: any = null;
   selectedAnswer: string = '';
   isAnswerCorrect: boolean = false;
+  answerSelected: boolean = false; //To track if an answer has been selected
 
   // constructor for HTTPClient, that is only availeble in this category
   constructor(private http: HttpClient) { }
@@ -31,11 +32,11 @@ export class QuestionService {
           console.log('Data from API:', data);
           if (data && data.results && data.results.length > 0) {
             this.questions = data.results;
-            this.currentQuestionIndex = 0; // Resetoi kysymysindeksin
+            this.currentQuestionIndex = 0;
             this.currentQuestion = this.questions[this.currentQuestionIndex];
             console.log('Questions loaded:', this.questions);
 
-            // Lähetä kysymykset takaisin observerille
+
             observer.next(this.questions);
             observer.complete();
           } else {
@@ -45,7 +46,7 @@ export class QuestionService {
         },
         error: (error) => {
           console.error('API call failed:', error);
-          observer.error(error); // Lähetä virhe observerille
+          observer.error(error);
         }
       });
     });
@@ -61,25 +62,32 @@ export class QuestionService {
   // Saves the answer and checks if it is correct
   selectAnswer(answer: string): void {
     this.selectedAnswer = answer;
+    console.log('You have made a choise.')
 
     // Checks if the answer is correct
     if (this.selectedAnswer === this.currentQuestion.correct_answer) {
-      // Add SCORE logic here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       this.isAnswerCorrect = true;
+      console.log('Your answer is correct.')
     }
 
     else {
       this.isAnswerCorrect = false;
+      console.log('Your answer is incorrect.')
     }
+    // Moves to next question
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 1500); //Adjust the delay as needed.
   }
 
 
   nextQuestion(): void {
-    if (this.currentQuestion < this.questions.length - 1) {
+    if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;
       this.currentQuestion = this.questions[this.currentQuestionIndex];
       this.selectedAnswer = '';
       this.isAnswerCorrect = false;
+      this.answerSelected = false; //To reset the selected answer
     }
 
     else {

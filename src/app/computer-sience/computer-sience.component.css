@@ -1,4 +1,3 @@
-/* Add this to your computer-sience.component.css */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -26,3 +25,15 @@
   color: black;
   /* Example selected style */
 }
+
+.button.correct {
+  background-color: green;
+  color: white;
+}
+
+.button.incorrect {
+  background-color: red;
+  color: white;
+}
+
+/* Add this to your computer-sience.component.css */
