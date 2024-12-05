@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-import { MatInputModule } from '@angular/material/input';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-front-page',
@@ -11,7 +11,7 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     FormsModule,
-    MatInputModule],
+  ],
   templateUrl: './front-page.component.html',
   styleUrl: './front-page.component.css'
 })
@@ -19,14 +19,14 @@ export class FrontPageComponent {
   username: string = '';
 
   constructor(private router: Router, private user: UserService) {
-    this.username = 'Testi';
+    this.username = '';
   }
 
 
 
-  OnSubmit(): void {
+  OnSubmit(form: NgForm): void {
 
-    if (this.username) {
+    if (form.valid) {
       console.log('Osuu ja uppoo', this.username);
       this.user.setUserName(this.username);  // Tallenna käyttäjänimi UserServiceen
       this.router.navigate(['/topics']);  // Siirry aiheen valintanäkymään
