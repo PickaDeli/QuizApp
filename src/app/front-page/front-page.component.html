@@ -16,23 +16,28 @@
 
 
 
+  <form (ngSubmit)="OnSubmit()">
+    <input class="input" type="text" [(ngModel)]="username" name="username" required minlength="4" #usernam="ngModel"
+      placeholder="Who's playing?">
 
-  <div class="field">
+    <!-- Eli ongelman aiheuttivat nämä validoinnit. Nappula on nyt koko ajan näkyvissä -->
 
-    <div class="control">
-      <input class="input" id="username" type="text" placeholder="Who's playing?" name="username" [(ngModel)]="username"
-        name="username" ngModel required minlength="4" #username="ngModel" />
-    </div>
-    <p class="help is-danger" *ngIf="username?.errors?.['required'] && username?.touched">
-      Pleace enter yourself a username.
-    </p>
+    <!-- <div class="field"> -->
+
+    <!-- <div class="control"> -->
+
+    <!-- </div>
+    <div class="help is-danger" *ngIf="username?.errors?.['required'] && username?.touched">
+      Pleace enter yourself a username.</div>
+
     <p class="help is-danger" *ngIf="username?.errors?.['minlength'] && username?.touched">
       Username must be at least 4 characters long.
-    </p>
-  </div>
+    </p> -->
 
-  <button class="button is-fullwidth, button is-danger" (click)="OnSubmit()" [disabled]="!username.valid"
-    type="submit">Let's
+    <!-- </div> -->
+  </form>
+
+  <button class="button is-fullwidth, button is-danger" (click)="OnSubmit()" type="submit">Let's
     play!</button>
 
 </div>
