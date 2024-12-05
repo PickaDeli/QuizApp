@@ -1,13 +1,17 @@
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+} */
+
+.card {
+  width: 500px;
+  align-items: center;
+  background-color: black !important;
 
 }
 
-.card {
-    width: 500px;
-    align-items: center;
-    background-color: black !important;
-
+.input {
+  width: 300px;
 }

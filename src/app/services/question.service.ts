@@ -79,7 +79,7 @@ export class QuestionService {
     // Moves to next question
     setTimeout(() => {
       this.nextQuestion();
-    }, 1500); //Adjust the delay as needed.
+    }, 2000); //Adjust the delay as needed.
   }
 
 
