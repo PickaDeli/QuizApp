@@ -19,8 +19,6 @@ export class UserService {
     return this.username;
   }
 
-  getUserName() {
-    return this.username;
-  }
+
 }
 

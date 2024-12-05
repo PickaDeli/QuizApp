@@ -6,6 +6,7 @@ import { ComputerSienceComponent } from './computer-sience/computer-sience.compo
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StarrySkyComponent } from './starry-sky/starry-sky.component';
+import { FinalPageComponent } from './final-page/final-page.component';
 
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'starrySky', component: StarrySkyComponent },
   { path: 'frontPage', component: FrontPageComponent },
   { path: 'topics', component: TopicsComponent },
+  { path: 'finalPage', component: FinalPageComponent },
   { path: '**', component: PageNotFoundComponent },
 
 
