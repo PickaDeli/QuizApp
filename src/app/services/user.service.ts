@@ -7,8 +7,8 @@ export class UserService {
   username: string = '';
 
   constructor() { }
-  setUserName(username: string) {
-    this.username
+  setUserName(username: string): void {
+    this.username = username;
     console.log('käyttäjänimi=', this.username)
   }
 }

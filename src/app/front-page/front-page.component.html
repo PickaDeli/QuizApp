@@ -20,7 +20,7 @@
   <div class="field">
 
     <div class="control">
-      <input class="input" id="username" type="text" placeholder="Who's playing?" [(ngModel)]="this.username"
+      <input class="input" id="username" type="text" placeholder="Who's playing?" name="username" [(ngModel)]="username"
         name="username" ngModel required minlength="4" #username="ngModel" />
     </div>
     <p class="help is-danger" *ngIf="username?.errors?.['required'] && username?.touched">
@@ -31,7 +31,7 @@
     </p>
   </div>
 
-  <button class="button is-fullwidth, button is-danger" (click)="OnSubmit()" [disabled]="username.valid"
+  <button class="button is-fullwidth, button is-danger" (click)="OnSubmit()" [disabled]="!username.valid"
     type="submit">Let's
     play!</button>
 

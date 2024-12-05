@@ -19,8 +19,8 @@ export class FrontPageComponent {
   username: string = '';
   ComputerSienceService: any;
 
-  OnSubmit(): any {
-
+  OnSubmit(): void {
+    console.log('Osuu ja uppoo', this.username);
     if (this.username) {
       this.user.setUserName(this.username);  // Tallenna käyttäjänimi UserServiceen
       this.router.navigate(['/topics']);  // Siirry aiheen valintanäkymään
