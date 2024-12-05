@@ -11,5 +11,9 @@ export class UserService {
     this.username = username;
     console.log('käyttäjänimi=', this.username)
   }
+
+  getUserName() {
+    return this.username;
+  }
 }
 
