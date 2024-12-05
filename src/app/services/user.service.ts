@@ -7,9 +7,16 @@ export class UserService {
   username: string = '';
 
   constructor() { }
+
+
   setUserName(username: string): void {
-    this.username = username;
     console.log('käyttäjänimi=', this.username)
+    this.username = username;
+
+  }
+
+  getUserName(): string {
+    return this.username;
   }
 
   getUserName() {

@@ -16,23 +16,19 @@
 
 
 
+  <form (ngSubmit)="OnSubmit(form)" #form="ngForm">
+    <input class="input" type="text" [(ngModel)]="username" name="username" #usernameValidate="ngModel" required
+      minlength="4" placeholder="Who's playing?">
+  </form>
 
-  <div class="field">
-
-    <div class="control">
-      <input class="input" id="username" type="text" placeholder="Who's playing?" name="username" [(ngModel)]="username"
-        name="username" ngModel required minlength="4" #username="ngModel" />
-    </div>
-    <p class="help is-danger" *ngIf="username?.errors?.['required'] && username?.touched">
-      Pleace enter yourself a username.
-    </p>
-    <p class="help is-danger" *ngIf="username?.errors?.['minlength'] && username?.touched">
-      Username must be at least 4 characters long.
-    </p>
+  <div *ngIf="usernameValidate.invalid && (usernameValidate.touched || usernameValidate.dirty)" class="alert">
+    <div *ngIf="usernameValidate.hasError('required')">Enter username!</div>
+    <div *ngIf="usernameValidate.hasError('minlength')">Username must contain atleast 4 characters!</div>
   </div>
+  <div class="block"></div>
 
-  <button class="button is-fullwidth, button is-danger" (click)="OnSubmit()" [disabled]="!username.valid"
-    type="submit">Let's
+  <button class="button is-fullwidth, button is-danger" (click)="OnSubmit(form)" type="submit"
+    [disabled]="usernameValidate.invalid">Let's
     play!</button>
 
 </div>
