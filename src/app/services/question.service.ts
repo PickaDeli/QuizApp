@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { ScoreService } from './score.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class QuestionService {
   answerSelected: boolean = false; //To track if an answer has been selected
 
   // constructor for HTTPClient, that is only availeble in this category
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, private scoreservice: ScoreService) { }
 
   // function that gets questions from the API and saves them to url-variable?
   getQuestionsByCategory(apiUrl: string): Observable<any> {
@@ -91,7 +93,8 @@ export class QuestionService {
     }
 
     else {
-      //Something to do with the fact that the wuiz has ended
+      this.scoreservice.triggerConfetti();
+      this.router.navigate(['/finalPage']);
     }
   }
 }
