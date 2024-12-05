@@ -20,13 +20,13 @@ export class ComputerSienceService {
 
   // }
 
-  private username: string | null = null;
-  // Asetetaan käyttäjänimi
-  setUsername(username: string): void {
-    this.username = username;
-  }
-  // Haetaan käyttäjänimi
-  getUsername(): string | null {
-    return this.username;
-  }
+  //   private username: string | null = null;
+  //   // Asetetaan käyttäjänimi
+  //   setUsername(username: string): void {
+  //     this.username = username;
+  //   }
+  //   // Haetaan käyttäjänimi
+  //   getUsername(): string | null {
+  //     return this.username;
+  //   }
 }
