@@ -22,12 +22,4 @@ export class FinalPageComponent {
   }
 
 
-  //totalPoints: number = 
-
-  //ngOnInit(){
-  //this.ScoreService.points$.subscribe(points => {
-  //this.totalPoints = points;
-  //}
-
-
 }
