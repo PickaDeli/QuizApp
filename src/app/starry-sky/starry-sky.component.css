@@ -1,38 +1,57 @@
 .sky {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: #001a33;
-    /* Tumma taivas */
-    overflow: hidden;
-    z-index: -1;
-    /* Asettaa tähtitaivaan taustalle */
-    pointer-events: none;
-    /* Estää tähtitaivasta estämästä vuorovaikutusta */
-    opacity: 1;
-    /*tähtitaivaan läpinäkyvyys */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #001a33;
+  /* Tumma taivas */
+  overflow: hidden;
+  z-index: -1;
+  /* Asettaa tähtitaivaan taustalle */
+  pointer-events: none;
+  /* Estää tähtitaivasta estämästä vuorovaikutusta */
+  opacity: 1;
+  /*tähtitaivaan läpinäkyvyys */
 }
 
 .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: twinkle 1.5s infinite alternate;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 1.5s infinite alternate, sizeChange 3s infinite alternate;
+  /* Satunnainen animaation kesto ja viive */
+
 }
 
 @keyframes twinkle {
-    0% {
-        opacity: 0.8;
-    }
+  0% {
+    opacity: 0.4;
+  }
 
-    50% {
-        opacity: 1;
-    }
+  50% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 0.8;
-    }
+  100% {
+    opacity: 0.8;
+  }
+
+
+}
+
+@keyframes sizeChange {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+    /* Tähdet suurenevat hieman */
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

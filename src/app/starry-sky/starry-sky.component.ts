@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './starry-sky.component.css'
 })
 export class StarrySkyComponent implements OnInit {
-  stars: Array<{ top: string, left: string }> = [];
+  stars: Array<{ top: string, left: string, size: string, duration: string, delay: string }> = [];
 
   ngOnInit() {
     this.generateStars(300); // Generoidaan taivaalle 300 tähteä
@@ -19,7 +19,10 @@ export class StarrySkyComponent implements OnInit {
     for (let i = 0; i < num; i++) {
       const top = Math.random() * 100 + '%';  // Satunnainen sijainti y-akselilla
       const left = Math.random() * 100 + '%'; // Satunnainen sijainti x-akselilla
-      this.stars.push({ top, left });
+      const size = (Math.random() * 2 + 1) + 'px';
+      const duration = (Math.random() * 2 + 1.5) + 's'; // Satunnainen kesto animaatiolle
+      const delay = (Math.random() * 3) + 's'; // Satunnainen viive animaatiolle
+      this.stars.push({ top, left, size, duration, delay });
     }
   }
 }

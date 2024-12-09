@@ -1,3 +1,22 @@
+<!-- <div class="sky">
+  <div *ngFor="let star of stars" class="star"
+    [ngStyle]="{
+    'top': star.top,
+    'left': star.left,
+    'size': star.size,
+    'duration': star.duration,
+    'delay': star.delay}">
+  </div>
+</div> -->
+
 <div class="sky">
-    <div *ngFor="let star of stars" class="star" [ngStyle]="{'top': star.top, 'left': star.left}"></div>
+  <div *ngFor="let star of stars" class="star" [ngStyle]="{
+         'top': star.top,
+         'left': star.left,
+         'width': star.size,
+         'height': star.size,
+         'animation-duration': star.duration,
+         'animation-delay': star.delay
+       }">
+  </div>
 </div>
