@@ -19,7 +19,9 @@ import { ScoreService } from '../services/score.service';
 })
 export class ComputerSienceComponent implements OnInit {
 
-  constructor(public questionService: QuestionService, public scoreService: ScoreService) { }
+  constructor(
+    public questionService: QuestionService,
+    public scoreService: ScoreService) { }
 
   apiUrl = 'https://opentdb.com/api.php?amount=15&category=18&difficulty=easy'
   questions: any[] = [];
@@ -53,6 +55,10 @@ export class ComputerSienceComponent implements OnInit {
     }
   }
 
+  // for tracking the buttons so that they wont switch places after selecting the answer
+  trackByAnswer(index: number, answer: string): string {
+    return answer;
+  }
 
 
   // Loads the next question

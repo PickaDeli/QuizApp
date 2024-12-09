@@ -7,7 +7,7 @@
 <!-- Choices -->
 
 <div class="grid-container">
-  <div *ngFor="let answer of questionService.getAllAnswers(); let i = index;" class="grid-item">
+  <div *ngFor="let answer of questionService.getAllAnswers(); let i = index; trackBy: trackByAnswer" class="grid-item">
     <button class="button" (click)="selectAnswer(answer)" [class.selected]="questionService.selectedAnswer === answer"
       [ngClass]="{
               'correct': questionService.isAnswerCorrect && questionService.selectedAnswer === answer,

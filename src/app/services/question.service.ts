@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ScoreService } from './score.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,9 +16,14 @@ export class QuestionService {
   selectedAnswer: string = '';
   isAnswerCorrect: boolean = false;
   answerSelected: boolean = false; //To track if an answer has been selected
+  answersShuffled: boolean = false; //To track if the answes has been suffled
 
-  // constructor for HTTPClient, that is only availeble in this category
-  constructor(private http: HttpClient, private router: Router, private scoreservice: ScoreService) { }
+
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private scoreservice: ScoreService,
+  ) { }
 
   // function that gets questions from the API and saves them to url-variable?
   getQuestionsByCategory(apiUrl: string): Observable<any> {
@@ -26,6 +32,8 @@ export class QuestionService {
     return this.http.get<any>(apiUrl);
 
   }
+
+
 
   loadQuestions(apiUrl: string): Observable<any[]> {
     return new Observable<any[]>((observer) => {
@@ -36,9 +44,15 @@ export class QuestionService {
             this.questions = data.results;
             this.currentQuestionIndex = 0;
             this.currentQuestion = this.questions[this.currentQuestionIndex];
-            console.log('Questions loaded:', this.questions);
 
+            // Debugging output to check question structure
+            console.log('Current question:', this.currentQuestion);
 
+            if (this.currentQuestion.correct_answer && Array.isArray(this.currentQuestion.incorrect_answers)) {
+              this.shuffleAnswers(this.currentQuestion);
+            } else {
+              console.error('Invalid question data:', this.currentQuestion);
+            }
             observer.next(this.questions);
             observer.complete();
           } else {
@@ -55,11 +69,23 @@ export class QuestionService {
   }
 
   getAllAnswers(): string[] {
-    if (this.currentQuestion) {
-      return [this.currentQuestion.correct_answer, ...this.currentQuestion.incorrect_answers];
+    if (this.currentQuestion && this.currentQuestion.shuffledAnswers) {
+      return this.currentQuestion.shuffledAnswers;
     }
-    return []; //returns empty if current question is null.
+    return [];
   }
+
+  shuffleAnswers(question: any): void {
+
+    const allAnswers = [question.correct_answer, ...question.incorrect_answers];
+    for (let i = allAnswers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [allAnswers[i], allAnswers[j]] = [allAnswers[j], allAnswers[i]];
+    }
+
+    question.shuffledAnswers = allAnswers;
+  }
+
 
   // Saves the answer and checks if it is correct
   selectAnswer(answer: string): void {
@@ -67,7 +93,7 @@ export class QuestionService {
     console.log('You have made a choise.')
 
     // Checks if the answer is correct
-    if (this.selectedAnswer === this.currentQuestion.correct_answer) {
+    if (answer === this.currentQuestion.correct_answer) {
       this.isAnswerCorrect = true;
       console.log('Your answer is correct.')
     }
@@ -87,6 +113,7 @@ export class QuestionService {
     if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;
       this.currentQuestion = this.questions[this.currentQuestionIndex];
+      this.shuffleAnswers(this.currentQuestion);
       this.selectedAnswer = '';
       this.isAnswerCorrect = false;
       this.answerSelected = false; //To reset the selected answer
@@ -97,4 +124,5 @@ export class QuestionService {
       this.router.navigate(['/finalPage']);
     }
   }
+
 }
