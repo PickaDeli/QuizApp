@@ -15,11 +15,14 @@ export class FinalPageComponent {
 
   totalscore: number = 0;
 
-  constructor(private scoreservice: ScoreService) { }
+  constructor(private scoreService: ScoreService) { }
 
-  TotalScore(): any {
-    this.totalscore = this.scoreservice.getScore();
+  ngOnInit(): void {
+    // Hae kokonaispisteet pelin päätyttyä
+    this.totalscore = this.scoreService.getScore();
+    console.log('Your score is:', this.totalscore)
   }
 
 
 }
+
