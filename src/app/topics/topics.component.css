@@ -1,7 +1,8 @@
-.card {
-  width: 250px;
+img {
+  height: 200px;
 }
 
-.grid {
-  justify-content: left;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
