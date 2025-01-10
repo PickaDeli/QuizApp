@@ -8,12 +8,16 @@ import { RouterModule } from '@angular/router';
 import { StarrySkyComponent } from './starry-sky/starry-sky.component';
 import { FinalPageComponent } from './final-page/final-page.component';
 import { GeneralComponent } from './general/general.component';
+import { GeographyComponent } from './geography/geography.component';
+import { CartoonsComponent } from './cartoons/cartoons.component';
 
 
 export const routes: Routes = [
   { path: '', redirectTo: '/frontPage', pathMatch: 'full' },
   { path: 'computer-sience', component: ComputerSienceComponent },
   { path: 'general', component: GeneralComponent },
+  { path: 'geography', component: GeographyComponent },
+  { path: 'cartoons', component: CartoonsComponent },
   { path: 'starrySky', component: StarrySkyComponent },
   { path: 'frontPage', component: FrontPageComponent },
   { path: 'topics', component: TopicsComponent },
