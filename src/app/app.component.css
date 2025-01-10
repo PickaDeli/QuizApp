@@ -21,15 +21,10 @@
   border-radius: 15px;
   margin: auto;
   text-align: center;
+
 }
 
 /* block styling */
 .block:not(:last-child) {
   margin-bottom: 1.5rem;
 }
-
-
-
-
-
-/* CSS for starrySky starts here */
