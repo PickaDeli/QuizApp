@@ -12,8 +12,10 @@ interface PlayerScore {
 @Component({
   selector: 'app-final-page',
   standalone: true,
-  imports: [RouterLink,
-    RouterLinkActive, CommonModule
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    CommonModule
   ],
   templateUrl: './final-page.component.html',
   styleUrl: './final-page.component.css'
@@ -30,14 +32,16 @@ export class FinalPageComponent implements OnInit {
     console.log('Your score is:', this.totalscore)
 
     this.topScores = this.scoreService.getTopScores();
+    console.log('Top scores on init:', this.topScores);
   }
   endRound(): void {
-    this.scoreService.endRound(); // Lisätään kierroksen kokonaispisteet top 5
+    console.log('endRound method is called');
+    this.scoreService.endRound(); // Lisää kierroksen kokonaispisteet top 5:een
     this.topScores = this.scoreService.getTopScores(); // Päivitä top 5
-    this.cdRef.detectChanges(); // Pakotetaan Angular päivittämään näkymä
+    console.log('Updated top 5:', this.topScores);
+
+    //this.cdRef.detectChanges(); // Pakotetaan näkymän päivitys
   }
-  updateTopScores(): void {
-    this.topScores = this.scoreService.getTopScores();  // Haetaan top 5 pisteet serviceltä
-  }
+
 }
 
