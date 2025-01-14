@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 
 interface PlayerScore {
   score: number;
-  date: Date;// Pisteet tallennetaan aikaleimalla, jotta voidaan lajitella pelisessioiden mukaan
+  date: Date;//Saving scores whit date
 }
 
 // install following:
@@ -16,8 +16,8 @@ interface PlayerScore {
 })
 export class ScoreService {
 
-  public scores: PlayerScore[] = []; // List of top 5
-  public score: number = 0;   // Player's current score
+  public scores: PlayerScore[] = []; //List of previous 5
+  public score: number = 0;   //current score
   private scoresKey = 'topScores'
 
 
@@ -30,18 +30,19 @@ export class ScoreService {
 
     if (this.score > 0) {
       this.scores.push({ score: this.score, date: new Date() });
+      //this.scores.sort((a, b) => b.date.getTime() - a.date.getTime()); //arranged by date
 
-      this.scores.sort((a, b) => b.date.getTime() - a.date.getTime()); // Järjestetään aikaleimalla
 
       if (this.scores.length > 5) {
-        this.scores.pop(); //näytetään 5
+        this.scores.shift();//shift() deletes the oldest value
       }
     }
     console.log('top 5: ', this.scores)
-    this.saveScores(); // Tallenna uudet pisteet LocalStorageen
+    this.saveScores(); //Saves scores to LocalStorage
 
-    this.triggerConfetti(); // Käynnistetään konfetti
-    // this.resetScore(); // Nollataan pistemäärä
+    this.triggerConfetti();
+
+    // this.resetScore();
   }
 
   private saveScores(): void {
