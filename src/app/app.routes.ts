@@ -10,6 +10,7 @@ import { FinalPageComponent } from './final-page/final-page.component';
 import { GeneralComponent } from './general/general.component';
 import { GeographyComponent } from './geography/geography.component';
 import { CartoonsComponent } from './cartoons/cartoons.component';
+import { RandomComponent } from './random/random.component';
 
 
 export const routes: Routes = [
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'general', component: GeneralComponent },
   { path: 'geography', component: GeographyComponent },
   { path: 'cartoons', component: CartoonsComponent },
+  { path: 'random', component: RandomComponent },
   { path: 'starrySky', component: StarrySkyComponent },
   { path: 'frontPage', component: FrontPageComponent },
   { path: 'topics', component: TopicsComponent },
