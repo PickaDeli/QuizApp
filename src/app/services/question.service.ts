@@ -122,6 +122,7 @@ export class QuestionService {
     else {
       this.scoreservice.triggerConfetti();
       this.router.navigate(['/finalPage']);
+      this.scoreservice.endRound();
     }
   }
 

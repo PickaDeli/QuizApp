@@ -11,9 +11,17 @@
     </div>
   </div>
 </div>
-<p>You earned {{ totalscore }} points</p>
+<p>You earned <b>{{ totalscore }}</b> points</p>
 <div class="block"></div>
 
-
+<div class="block">
+  <h3>Your scores:</h3>
+  <ul>
+    <li *ngFor="let score of topScores; let i = index" class="top-score-item">
+      {{ i + 1 }}. {{ score.score }} points ({{ score.date | date:'short' }})
+    </li>
+  </ul>
+  <p *ngIf="topScores.length === 0">Oops, sorry no scores...</p>
+</div>
 
 <button class="button is-danger" routerLink="/topics" routerLinkActive="active">Play again</button>

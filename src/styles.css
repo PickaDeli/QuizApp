@@ -10,3 +10,9 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+/*tumman teeman asetukset
+body.dark-theme {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}*/
