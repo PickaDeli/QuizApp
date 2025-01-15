@@ -1,16 +1,19 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="assets/Images/unicorn-7107894_1280.png" alt="" />
-    </figure>
+<img src="assets/Images/WonAPrice.png" alt="Hooray Unicorn!">
+
+<!-- Tähän pallot, math.random ei toimi -->
+<!-- <div class="balloon-container">
+  <div *ngFor="let balloon of balloons; let i = index" class="balloon" [style.left]="balloon.x + '%'"
+    [style.animation-duration]="(3 + Math.random() * 5) + 's'" (click)="popBalloon(i)">
   </div>
-  <div class="block">
-    <div class="content">
-      Nicely done! Wanna play again?
-      <br />
-    </div>
+</div> -->
+
+<div class="block">
+  <div class="content">
+    Nicely done! Wanna play again?
+    <br />
   </div>
 </div>
+
 <p>You earned <b>{{ totalscore }}</b> points</p>
 <div class="block"></div>
 

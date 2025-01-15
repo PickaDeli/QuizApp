@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ScoreService } from '../services/score.service';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
+import { BalloonService } from '../services/balloons.service';
 
 interface PlayerScore {
   score: number;
@@ -24,8 +25,9 @@ export class FinalPageComponent implements OnInit {
 
   totalscore: number = 0;
   topScores: PlayerScore[] = [];
+  balloons: { x: number }[] = [];
 
-  constructor(private scoreService: ScoreService, private cdRef: ChangeDetectorRef) { }
+  constructor(private scoreService: ScoreService, private cdRef: ChangeDetectorRef, private balloonService: BalloonService) { }
 
   ngOnInit(): void {
     this.totalscore = this.scoreService.getScore();// Haetaan kokonaispisteet pelin päätyttyä
@@ -33,6 +35,9 @@ export class FinalPageComponent implements OnInit {
 
     this.topScores = this.scoreService.getTopScores();
     console.log('Top scores on init:', this.topScores);
+
+    // Generoidaan vähän palloja!
+    this.balloons = this.balloonService.generateBalloons(200);
   }
   endRound(): void {
     console.log('endRound method is called');
@@ -41,6 +46,12 @@ export class FinalPageComponent implements OnInit {
     console.log('Updated top 5:', this.topScores);
 
     //this.cdRef.detectChanges(); // Pakotetaan näkymän päivitys
+  }
+
+  popBalloon(index: number): void {
+    // Poistaa ilmapallot listasta ja päivittää näkymän
+    this.balloonService.popBalloon(index);
+    this.balloons = this.balloonService.getBalloons();
   }
 
 }
