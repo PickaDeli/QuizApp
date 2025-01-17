@@ -1,6 +1,6 @@
 <!-- To print the question -->
 <div *ngIf="questionService.currentQuestion">
-  <h2 [innerHTML]="questionService.currentQuestion.question"></h2>
+  <p [innerHTML]="questionService.currentQuestion.question"></p>
 </div>
 <div class="block"></div>
 
@@ -22,6 +22,6 @@
   </div>
   <div class="block"></div>
 
+
   <!-- Progressbar- not working yet -->
   <!-- <progress class="progress" value="15" max="100">15%</progress> -->
-</div>

@@ -1,32 +1,50 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-5by4">
-      <img src="/assets/Images/unicorn-8563104_1280.png" alt="" />
-    </figure>
-  </div>
+<div class="container">
+  <h1>Welcome to QuizApp!</h1>
+
+  <div class="block"></div>
+
+
+  <img src="/assets/Images/unicorn-8563104_1280.png" alt="Cute unicorn" class="image" />
+
+  <div class="block"></div>
+
   <div class="content">
-    <b>Welcome to QuizApp!</b>
-    <br> Test your knowledge in different subject areas and learn something new.
-    Start by creating a username for
-    yourself.
-    <br>Have fun!
-    <br />
+    <p>Test your knowledge in different subject areas and <br>
+      learn something new.<br>
+      Start by creating a username for
+      yourself!</p>
   </div>
+
+
+  <form (ngSubmit)="OnSubmit(form)" #form="ngForm">
+    <input class="input" type="text" [(ngModel)]="username" name="username" #usernameValidate="ngModel" required
+      minlength="4" placeholder="Who's playing?">
+  </form>
+
+  <div *ngIf="usernameValidate.invalid && (usernameValidate.touched || usernameValidate.dirty)" class="alert">
+    <div *ngIf="usernameValidate.hasError('required')">Enter username!</div>
+    <div *ngIf="usernameValidate.hasError('minlength')">Username must contain atleast 4 characters!</div>
+  </div>
+  <div class="block"></div>
+
+  <button class="button is-fullwidth, button is-danger" (click)="OnSubmit(form)" type="submit"
+    [disabled]="usernameValidate.invalid">Let's
+    play!</button>
 </div>
 
 
 
-<form (ngSubmit)="OnSubmit(form)" #form="ngForm">
-  <input class="input" type="text" [(ngModel)]="username" name="username" #usernameValidate="ngModel" required
-    minlength="4" placeholder="Who's playing?">
-</form>
+<!-- <div class="card">
+      <div class="card-image">
+      <figure class="image is-5by4">
+      <img src="/assets/Images/unicorn-8563104_1280.png" alt="" class="responsive-image" />
+       </figure>
 
-<div *ngIf="usernameValidate.invalid && (usernameValidate.touched || usernameValidate.dirty)" class="alert">
-  <div *ngIf="usernameValidate.hasError('required')">Enter username!</div>
-  <div *ngIf="usernameValidate.hasError('minlength')">Username must contain atleast 4 characters!</div>
-</div>
-<div class="block"></div>
 
-<button class="button is-fullwidth, button is-danger" (click)="OnSubmit(form)" type="submit"
-  [disabled]="usernameValidate.invalid">Let's
-  play!</button>
+
+      <br> Test your knowledge in different subject areas and learn something new.
+      Start by creating a username for
+      yourself.
+      <br>Have fun!
+      <br />
+      </div> -->
