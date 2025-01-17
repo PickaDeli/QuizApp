@@ -35,3 +35,16 @@
   background-color: red;
   color: white;
 }
+
+.button.show-correct {
+  animation: blink 1s infinite !important;
+  background-color: green !important;
+  color: white !important;
+  border: 2px solid darkgreen !important;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}

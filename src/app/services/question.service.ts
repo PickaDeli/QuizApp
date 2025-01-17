@@ -76,7 +76,6 @@ export class QuestionService {
   }
 
   shuffleAnswers(question: any): void {
-
     const allAnswers = [question.correct_answer, ...question.incorrect_answers];
     for (let i = allAnswers.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -102,7 +101,10 @@ export class QuestionService {
       this.isAnswerCorrect = false;
       console.log('Your answer is incorrect.')
     }
-    // Moves to next question
+
+    this.answerSelected = true;
+
+    // Moves to next question with delay
     setTimeout(() => {
       this.nextQuestion();
     }, 2000); //Adjust the delay as needed.
