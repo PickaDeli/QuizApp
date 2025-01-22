@@ -18,6 +18,7 @@
   /* Allow text to wrap */
   text-align: center;
   background-color: blueviolet;
+  color: white;
 }
 
 .button.selected {
