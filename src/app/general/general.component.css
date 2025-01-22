@@ -2,49 +2,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  /* Adjust the gap between buttons as needed */
 }
 
 .grid-item {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.button {
-  width: 100%;
-  height: 100%;
-  white-space: normal;
-  /* Allow text to wrap */
-  text-align: center;
-  background-color: blueviolet;
-}
-
-.button.selected {
-  background-color: #d4d4d4;
-  color: black;
-  /* Example selected style */
-}
-
-.button.correct {
-  background-color: green !important;
-  color: white !important;
-}
-
-.button.incorrect {
-  background-color: red !important;
-  color: white !important;
-}
-
-.button.show-correct {
-  animation: blink 1s infinite !important;
-  background-color: green !important;
-  color: white !important;
-  border: 2px solid darkgreen !important;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0.5;
-  }
 }

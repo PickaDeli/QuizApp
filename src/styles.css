@@ -11,11 +11,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-/*tumman teeman asetukset
-body.dark-theme {
-  background-color: #121212 !important;
-  color: #ffffff !important;
-}*/
 
 h1 {
   font-family: "Barrio", serif !important;
@@ -31,4 +26,41 @@ p {
   font-style: normal;
   font-size: large;
   color: white;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  text-align: center;
+  background-color: blueviolet;
+  color: white;
+}
+
+.button.selected {
+  background-color: #d4d4d4;
+  color: black;
+}
+
+.button.correct {
+  background-color: green !important;
+  color: white !important;
+}
+
+.button.incorrect {
+  background-color: red !important;
+  color: white !important;
+}
+
+.button.show-correct {
+  animation: blink 1s infinite !important;
+  background-color: green !important;
+  color: white !important;
+  border: 2px solid darkgreen !important;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
 }

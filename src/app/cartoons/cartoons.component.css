@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  /* Adjust the gap between buttons as needed */
+
 }
 
 .grid-item {
@@ -15,7 +15,6 @@
   width: 100%;
   height: 100%;
   white-space: normal;
-  /* Allow text to wrap */
   text-align: center;
   background-color: blueviolet;
 }
@@ -23,7 +22,6 @@
 .button.selected {
   background-color: #d4d4d4;
   color: black;
-  /* Example selected style */
 }
 
 .button.correct {
