@@ -1,30 +1,26 @@
 <img src="assets/Images/WonAPrice.png" alt="Hooray Unicorn!">
 
-<!-- Tähän pallot, math.random ei toimi -->
+
 <!-- <div class="balloon-container">
   <div *ngFor="let balloon of balloons; let i = index" class="balloon" [style.left]="balloon.x + '%'"
     [style.animation-duration]="(3 + Math.random() * 5) + 's'" (click)="popBalloon(i)">
   </div>
 </div> -->
 
-<div class="block">
-  <div class="content">
-    Nicely done! Wanna play again?
-    <br />
-  </div>
-</div>
-
-<p>You earned <b>{{ totalscore }}</b> points</p>
+<p>Nicely done! <br>
+  You earned <b>{{ totalscore }}</b> points</p>
 <div class="block"></div>
 
 <div class="block">
-  <h3>Your scores:</h3>
+  <p>Your scores:</p>
   <ul>
-    <li *ngFor="let score of topScores; let i = index" class="top-score-item">
-      {{ i + 1 }}. {{ score.score }} points ({{ score.date | date:'mediumDate' }})<!--Shows scores Month.day.year-->
-    </li>
+    <p>
+      <li *ngFor="let score of topScores; let i = index" class="top-score-item">
+        {{ i + 1 }}. {{ score.score }} points ({{ score.date | date:'mediumDate' }})<!--Shows scores Month.day.year-->
+      </li>
+    </p>
   </ul>
   <p *ngIf="topScores.length === 0">Oops, sorry no scores...</p><!--If there is no scores saved-->
 </div>
 
-<button class="button is-danger" routerLink="/topics" routerLinkActive="active">Play again</button>
+<button class="button is-danger" routerLink="/topics" routerLinkActive="active">Wanna play again?</button>
