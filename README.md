@@ -1,4 +1,4 @@
-Sugar Hoof Quiz App
+<b>Sugar Hoof Quiz App</b>
 
 Sugar Hoof is a playfull quiz application that offers 5 different question categorys.
 
