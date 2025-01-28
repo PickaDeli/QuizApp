@@ -6,10 +6,12 @@ import { StarrySkyComponent } from './starry-sky/starry-sky.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, StarrySkyComponent],//starrySky näkyy taustalla
+  imports: [
+    RouterOutlet,
+    StarrySkyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'QuizApp';
+  title = 'Sugar Hoof';
 }
