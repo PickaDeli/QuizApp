@@ -21,10 +21,10 @@
   <h3>Your scores:</h3>
   <ul>
     <li *ngFor="let score of topScores; let i = index" class="top-score-item">
-      {{ i + 1 }}. {{ score.score }} points ({{ score.date | date:'short' }})
+      {{ i + 1 }}. {{ score.score }} points ({{ score.date | date:'mediumDate' }})<!--Shows scores Month.day.year-->
     </li>
   </ul>
-  <p *ngIf="topScores.length === 0">Oops, sorry no scores...</p>
+  <p *ngIf="topScores.length === 0">Oops, sorry no scores...</p><!--If there is no scores saved-->
 </div>
 
 <button class="button is-danger" routerLink="/topics" routerLinkActive="active">Play again</button>
