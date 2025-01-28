@@ -1,27 +1,67 @@
-# QuizApp
+Sugar Hoof Quiz App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Sugar Hoof is a playfull quiz application that offers 5 different question categorys.
 
-## Development server
+Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The user first creates a username for the session and then chooses one category of the following; Cartoons, Geopgraphy, General Knowledge, Computer Sience and Wild Card. 
+Each category offers 15 different questions related to the topic. The player gets instant feedback wether the answer was correct or not and earns points. After all questions are answered the player gets to view all points gathered this session. Points are saved to local storage and it shows the last 5 rounds. 
 
-## Code scaffolding
+Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dependencies
 
-## Build
+The application has been developed for Safari.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Install following:
+Angular 18.2 -> npm install -g @angular/cli
+Canvas Confetti 1.9.3 -> npm install canvas-confetti
+rxjs 7.8.0 -> npm install rxjs
 
-## Running unit tests
+CSS comes from
+Bulma 1.0.2 (no installation needed)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Fonts from
+Google Fonts (no installation needed)
 
-## Running end-to-end tests
+Question API
+https://opentdb.com/api_config.php (no installation needed)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+How/where to download your program
 
-## Further help
+Download the application from GitHub and open it with code editor like Visual Studio Code.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+How to run the program
+
+Run the app by typing ng serve --open in the Visual Studio Code terminal.
+After that the application should start in your browser.
+
+Any advise for common problems or issues.
+
+--
+
+Authors
+
+Application has been made as a school project in
+LAB University of Applied Sciences by
+Marianne Salakka
+Sari Meuronen
+
+
+Version History
+
+Initial Release
+
+License
+
+--
+
+Acknowledgments
+
+Inspiration, code snippets, etc.
+
+awesome-readme
+PurpleBooth
+dbader
+zenorocha
+fvcproductions
