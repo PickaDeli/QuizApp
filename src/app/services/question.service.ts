@@ -19,22 +19,22 @@ export class QuestionService {
   answersShuffled: boolean = false; //To track if the answes has been suffled
 
 
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private scoreservice: ScoreService,
   ) { }
 
-  // function that gets questions from the API and saves them to url-variable?
+  // Function that gets questions from the API and saves them to url-variable
   getQuestionsByCategory(apiUrl: string): Observable<any> {
-    // Name of the function, Observale = asyncronic <any[]> = type of data array expected
-    // returns http get from api.Url
+
     return this.http.get<any>(apiUrl);
 
   }
 
 
-
+  // Loads the questions and checks that the data coming from the API is ok.
   loadQuestions(apiUrl: string): Observable<any[]> {
     return new Observable<any[]>((observer) => {
       this.getQuestionsByCategory(apiUrl).subscribe({
@@ -68,6 +68,7 @@ export class QuestionService {
     });
   }
 
+  // Gets all answers and shuffles them
   getAllAnswers(): string[] {
     if (this.currentQuestion && this.currentQuestion.shuffledAnswers) {
       return this.currentQuestion.shuffledAnswers;
@@ -75,6 +76,7 @@ export class QuestionService {
     return [];
   }
 
+  // For shuffeling the answers
   shuffleAnswers(question: any): void {
     const allAnswers = [question.correct_answer, ...question.incorrect_answers];
     for (let i = allAnswers.length - 1; i > 0; i--) {
@@ -111,6 +113,7 @@ export class QuestionService {
   }
 
 
+  // Loads up the next wuestion and resets selected answer
   nextQuestion(): void {
     if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;
