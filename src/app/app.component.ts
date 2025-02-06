@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StarrySkyComponent } from './starry-sky/starry-sky.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { StarrySkyComponent } from './starry-sky/starry-sky.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    StarrySkyComponent],
+    StarrySkyComponent,
+    DropdownComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
