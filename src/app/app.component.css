@@ -37,3 +37,17 @@
   left: 40px;
   z-index: 1000;
 }
+
+.logo-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  /* Säädä kokoa tarvittaessa */
+  z-index: 1000;
+}
+
+.logo-container img {
+  width: 200px;
+  height: auto;
+}
