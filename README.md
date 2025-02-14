@@ -62,12 +62,4 @@ Initial Release
 
 --
 
-<h3>Acknowledgments</h3>
 
-Inspiration, code snippets, etc.
-
-awesome-readme
-PurpleBooth
-dbader
-zenorocha
-fvcproductions
