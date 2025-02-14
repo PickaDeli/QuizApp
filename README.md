@@ -4,8 +4,13 @@ Sugar Hoof is a playfull quiz application that offers 5 different question categ
 
 <h2>Description</h2>
 
+<center><img width="1445" alt="Näyttökuva 2025-02-14 kello 11 09 44" src="https://github.com/user-attachments/assets/6278eb9d-b818-497f-80a6-a43cdbdd2f96" />
+</center><br>
+
 The user first creates a username for the session and then chooses one category of the following; Cartoons, Geopgraphy, General Knowledge, Computer Sience and Wild Card. 
 Each category offers 15 different questions related to the topic. The player gets instant feedback wether the answer was correct or not and earns points. After all questions are answered the player gets to view all points gathered this session. Points are saved to local storage and it shows the last 5 rounds. 
+
+
 
 <h2>Getting Started</h2>
 
