@@ -23,13 +23,12 @@ export class FrontPageComponent {
   }
 
 
-
   OnSubmit(form: NgForm): void {
 
     if (form.valid) {
       console.log('Osuu ja uppoo', this.username);
-      this.user.setUserName(this.username);  // Tallenna käyttäjänimi UserServiceen
-      this.router.navigate(['/topics']);  // Siirry aiheen valintanäkymään
+      this.user.setUserName(this.username);  // Save the username to UserService
+      this.router.navigate(['/topics']);  //  Go to select a topic.
       console.log('topics toimii')
     }
     else {

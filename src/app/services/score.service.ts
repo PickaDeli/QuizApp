@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 
 interface PlayerScore {
   score: number;
-  date: Date;//Saving scores whit date
+  date: Date;// Saving scores whit date
 }
 
 // install following:
@@ -16,8 +16,8 @@ interface PlayerScore {
 })
 export class ScoreService {
 
-  public scores: PlayerScore[] = []; //List of previous 5
-  public score: number = 0;   //current score
+  public scores: PlayerScore[] = []; // List of previous 5 rounds
+  public score: number = 0;   // current score
   private scoresKey = 'topScores'
 
 
@@ -30,7 +30,6 @@ export class ScoreService {
 
     if (this.score > 0) {
       this.scores.push({ score: this.score, date: new Date() });
-      //this.scores.sort((a, b) => b.date.getTime() - a.date.getTime()); //arranged by date
 
 
       if (this.scores.length > 5) {
@@ -41,8 +40,6 @@ export class ScoreService {
     this.saveScores(); //Saves scores to LocalStorage
 
     this.triggerConfetti();
-
-    // this.resetScore();
   }
 
   private saveScores(): void {

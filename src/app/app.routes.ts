@@ -29,9 +29,9 @@ export const routes: Routes = [
 
 
 ];
-//reititys sivulta toiselle
+// Routing from one page to another
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],  // Ladataan reitit
+  imports: [RouterModule.forRoot(routes)],  // Loading routes
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

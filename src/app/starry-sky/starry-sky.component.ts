@@ -12,16 +12,16 @@ export class StarrySkyComponent implements OnInit {
   stars: Array<{ top: string, left: string, size: string, duration: string, delay: string }> = [];
 
   ngOnInit() {
-    this.generateStars(300); // Generoidaan taivaalle 300 tähteä
+    this.generateStars(300); // Generate 300 stars in the sky
   }
 
   generateStars(num: number) {
     for (let i = 0; i < num; i++) {
-      const top = Math.random() * 100 + '%';  // Satunnainen sijainti y-akselilla
-      const left = Math.random() * 100 + '%'; // Satunnainen sijainti x-akselilla
+      const top = Math.random() * 100 + '%';  // Random location on the y- axis
+      const left = Math.random() * 100 + '%'; // Random location on the x- axis
       const size = (Math.random() * 2 + 1) + 'px';
-      const duration = (Math.random() * 2 + 1.5) + 's'; // Satunnainen kesto animaatiolle
-      const delay = (Math.random() * 3) + 's'; // Satunnainen viive animaatiolle
+      const duration = (Math.random() * 2 + 1.5) + 's'; // Random duration for the animation
+      const delay = (Math.random() * 3) + 's'; // Random delay for the animation
       this.stars.push({ top, left, size, duration, delay });
     }
   }

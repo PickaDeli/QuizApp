@@ -3,14 +3,14 @@
   width: 100vw;
   height: 100vh;
   background-color: #001a33;
-  /* Tumma taivas */
+  /* Dark sky */
   overflow: hidden;
   z-index: -1;
-  /* Asettaa tähtitaivaan taustalle */
+  /* Set the starry sky as the background */
   pointer-events: none;
-  /* Estää tähtitaivasta estämästä vuorovaikutusta */
+  /* Prevents the starry sky from blocking interaction */
   opacity: 1;
-  /*tähtitaivaan läpinäkyvyys */
+  /* Transparency of the starry sky */
 }
 
 .star {
@@ -21,7 +21,7 @@
   border-radius: 50%;
   opacity: 0.8;
   animation: twinkle 1.5s infinite alternate, sizeChange 3s infinite alternate;
-  /* Satunnainen animaation kesto ja viive */
+  /* Random animation duration and delay */
 
 }
 
@@ -48,7 +48,7 @@
 
   50% {
     transform: scale(1.5);
-    /* Tähdet suurenevat hieman */
+    /* The stars increase in size a little */
   }
 
   100% {
