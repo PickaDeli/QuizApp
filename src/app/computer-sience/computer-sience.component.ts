@@ -65,6 +65,7 @@ export class ComputerSienceComponent implements OnInit {
   nextQuestion(): void {
     this.questionService.nextQuestion();
   }
+
 }
 
 

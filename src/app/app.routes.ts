@@ -3,7 +3,7 @@ import { TopicsComponent } from './topics/topics.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { ComputerSienceComponent } from './computer-sience/computer-sience.component';
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StarrySkyComponent } from './starry-sky/starry-sky.component';
 import { FinalPageComponent } from './final-page/final-page.component';
@@ -29,9 +29,9 @@ export const routes: Routes = [
 
 
 ];
-// Routing from one page to another
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],  // Loading routes
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

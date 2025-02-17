@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Welcome to QuizApp!</h1>
+  <h1>Welcome to SugarHoof!</h1>
 
   <div class="block"></div>
 
@@ -27,6 +27,9 @@
   </div>
   <div class="block"></div>
 
-  <button class="button is-danger" (click)="OnSubmit(form)" type="submit" [disabled]="usernameValidate.invalid">Let's
-    play!</button><!--button works if user has set a username-->
+  <button class="button is-danger start-button" (click)="OnSubmit(form)" type="submit"
+    [disabled]="usernameValidate.invalid">
+    <p>Let's
+      play!</p>
+  </button><!--button works if user has set a username-->
 </div>

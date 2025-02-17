@@ -3,7 +3,6 @@
   width: 100vw;
   height: 100vh;
   background-color: #001a33;
-  /* Dark sky */
   overflow: hidden;
   z-index: -1;
   /* Set the starry sky as the background */
@@ -21,7 +20,7 @@
   border-radius: 50%;
   opacity: 0.8;
   animation: twinkle 1.5s infinite alternate, sizeChange 3s infinite alternate;
-  /* Random animation duration and delay */
+
 
 }
 
@@ -48,7 +47,7 @@
 
   50% {
     transform: scale(1.5);
-    /* The stars increase in size a little */
+
   }
 
   100% {

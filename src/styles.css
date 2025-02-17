@@ -15,7 +15,7 @@ body {
 h1 {
   font-family: "Joti One", serif !important;
   font-weight: 300;
-  font-size: xx-large;
+  font-size: 55px;
   font-style: normal;
   color: white;
 }
@@ -24,11 +24,12 @@ p {
   font-family: "Atma", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: large;
+  font-size: 20px;
   color: white;
 }
 
 .button {
+  font-family: "Atma", serif;
   width: 100%;
   height: 100%;
   white-space: normal;
@@ -38,25 +39,56 @@ p {
 }
 
 .button.selected {
+  font-family: "Atma", serif;
   background-color: #d4d4d4;
   color: black;
 }
 
 .button.correct {
+  font-family: "Atma", serif;
   background-color: green !important;
   color: white !important;
 }
 
 .button.incorrect {
+  font-family: "Atma", serif;
   background-color: red !important;
   color: white !important;
 }
 
 .button.show-correct {
+  font-family: "Atma", serif;
   animation: blink 1s infinite !important;
   background-color: green !important;
   color: white !important;
   border: 2px solid darkgreen !important;
+}
+
+.start-button {
+  font-family: "Atma", serif;
+  font-size: 1rem;
+  width: 200px;
+  height: 50px;
+}
+
+.button-menu {
+  background-color: rgb(3, 3, 28);
+  width: 80px;
+  height: 50px;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-content {
+  background-color: rgb(3, 3, 28)
+}
+
+.dropdown-item {
+  background-color: rgb(3, 3, 28) !important;
+  color: white;
 }
 
 @keyframes blink {

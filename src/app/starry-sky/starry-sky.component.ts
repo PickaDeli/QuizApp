@@ -11,17 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class StarrySkyComponent implements OnInit {
   stars: Array<{ top: string, left: string, size: string, duration: string, delay: string }> = [];
 
+  // Loads the starts to the sky
   ngOnInit() {
     this.generateStars(300); // Generate 300 stars in the sky
+    this.generateStars(300);
   }
-
+  // Random generator that places the stars to the sky and makes them twinkle
   generateStars(num: number) {
     for (let i = 0; i < num; i++) {
-      const top = Math.random() * 100 + '%';  // Random location on the y- axis
-      const left = Math.random() * 100 + '%'; // Random location on the x- axis
+      const top = Math.random() * 100 + '%';
+      const left = Math.random() * 100 + '%';
       const size = (Math.random() * 2 + 1) + 'px';
-      const duration = (Math.random() * 2 + 1.5) + 's'; // Random duration for the animation
-      const delay = (Math.random() * 3) + 's'; // Random delay for the animation
+      const duration = (Math.random() * 2 + 1.5) + 's';
+      const delay = (Math.random() * 3) + 's';
       this.stars.push({ top, left, size, duration, delay });
     }
   }
