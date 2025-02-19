@@ -10,7 +10,7 @@ export class UserService {
 
 
   setUserName(username: string): void {
-    console.log('käyttäjänimi=', this.username)
+    console.log('username=', this.username)
     this.username = username;
 
   }

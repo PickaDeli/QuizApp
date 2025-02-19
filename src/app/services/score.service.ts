@@ -8,7 +8,6 @@ interface PlayerScore {
 
 // install following:
 //npm install canvas-confetti
-// Alla olevaa ei ehkä tarvitse?
 //npm i --save-dev @types/canvas-confetti
 
 @Injectable({
